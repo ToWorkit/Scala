@@ -45,5 +45,12 @@ object for_ {
       i <- 1 to 3
       m = i * 2
     } println(m) // 2 4 6
+
+    val list = List("Hello", "World", "Only")
+    val upItem = for {
+      item <- list
+      upItem = item.toUpperCase
+    }yield (upItem)
+    println(upItem)
   }
 }
