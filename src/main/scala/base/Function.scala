@@ -2,6 +2,32 @@ package base
 
 object Function {
   def main(args: Array[String]): Unit = {
+
+    /**
+      * call by value
+      *   对函数的实参求值，仅仅只求一次
+      * call by name
+      *   函数的实参每次在函数体内部被调用的时候(必须在函数体内部有调用)，都会求一次值
+      */
+
+    // call by value
+    def b_value(x: Int, y: Int): Int = x + x
+    // 传入值就运算且只运算一次
+    println(b_value(1 + 2, 2)) // 3, 2 => 6
+
+    // call by name
+    def b_name(x: => Int, y: => Int): Int = x + x
+    // 每次调用时都会对传入值进行运算
+    println(b_name(1 + 2, 2)) // 1 + 2, 2 => 6
+
+    // x 为 call by value，y 是 call by name
+    def bar(x: Int, y: => Int): Int = 1
+    // 定义一个死循环
+    def loop():Int = loop
+    // 值为1，必须在函数体内被调用才会执行运算
+    bar(1, loop)
+    // bar(loop, 1) 传入值就运算，死循环
+
     /**
       * 不同的写法
       */
