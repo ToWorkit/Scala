@@ -17,6 +17,7 @@ object set {
 
     // 判断有木有
     println(s1(5)) // false
+    println(s1.contains(4)) // true
 
     // 追加值
     s2.add(9)
