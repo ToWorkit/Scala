@@ -7,8 +7,8 @@ object list {
     val list = List(1, 2)
     println(list(1)) // 2
     // 不允许修改
-/*    list(1) = 3
-    println(list)*/
+    /*    list(1) = 3
+        println(list)*/
 
     // 追加，结尾必须是一个空列表(Nil)或者列表
     // Nil => List[Nothing]
@@ -33,6 +33,34 @@ object list {
 
     // map 将集合中的每一个元素映射到某一个函数
     val names = List("lp", "pl", "pp")
-    println(names.map(_.toUpperCase)) // List(LP, PL, PP)
+    println(names.map(_.toUpperCase)) // List(LP, PL, PP) 不会操作原数据
+
+    // flatmap flat即压扁，压平，扁平化，效果就是将集合中的每个元素的子元素映射到某个函数并返回新的集合
+    println(names.flatMap(_.toUpperCase())) // List(L, P, P, L, P, P) 不会操作原数据
+
+    // 化简，折叠，扫描
+    val list5 = List(1, 2, 3, 4)
+    // 从左到右相减
+    val l5 = list5.reduceLeft(_ - _)
+    println(l5) // -8
+    // 从右到左相减
+    val r5 = list5.reduceRight(_ - _)
+    println(r5) // -2
+
+    //拉链
+    val zip1 = List("15837312345", "137373123456")
+    val zip2 = List("孙悟空", "猪八戒")
+    val zipResultList = zip1 zip zip2
+    println(zipResultList) // List((15837312345,孙悟空), (137373123456,猪八戒))
+    val zipMap = mutable.Map[String, String]()
+    for (e <- zipResultList) {
+      zipMap += e
+    }
+    println(zipMap) // Map(15837312345 -> 孙悟空, 137373123456 -> 猪八戒)
+
+    val iter = List(1, 2, 3, 4).iterator
+    while (iter.hasNext) {
+      println(iter.next())
+    }
   }
 }
