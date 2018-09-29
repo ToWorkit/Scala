@@ -29,6 +29,10 @@ object list {
     val nullList: List[Nothing] = List()
     // 二维列表
     val erList: List[List[Int]] = List(List(1, 2, 3), List(4, 5, 6))
-    println(erList)
+    println(erList) // List(List(1, 2, 3), List(4, 5, 6))
+
+    // map 将集合中的每一个元素映射到某一个函数
+    val names = List("lp", "pl", "pp")
+    println(names.map(_.toUpperCase)) // List(LP, PL, PP)
   }
 }
