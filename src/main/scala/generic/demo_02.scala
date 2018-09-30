@@ -21,7 +21,7 @@ class EatSomething[- T](t: T) {}
 object demo_02 {
   def main(args: Array[String]): Unit = {
     // 创建一个鸟吃东西的对象
-    var c1: EatSomething[Bird_01] = new EatSomething[Bird](new Bird_01)
+    var c1: EatSomething[Bird_01] = new EatSomething[Bird_01](new Bird_01)
     // 创建一个麻雀吃东西的对象
 //    var c2: EatSomething[Sparrow] = new EatSomething[Sparrow](new Sparrow)
     //  c1(父类) 赋值给 c2
