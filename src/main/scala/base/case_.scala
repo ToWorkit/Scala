@@ -72,5 +72,27 @@ object case_ {
       case List(x, y, z) => println("该List中包含三个元素，和是: " + (x + y + z))
       case List(_*) => println("這是一個List")
     }
+
+    // 使用样本支持模式匹配，类似 instanceof
+    // 判断一个对象是否是某个类的对象
+    class Test
+    case class Car(name: String) extends Test
+    case class Bike(name: String) extends Test
+    // 实例化
+    var nc = new Car("汽车")
+    nc match {
+      case Car(name) => println("汽车类")
+
+      /**
+        * Error:(85, 12) constructor cannot be instantiated to expected type;
+        * found   : Bike
+        * required: Car
+        * case Bike(name) => println("自行车类")
+         */
+//      case Bike(name) => println("自行车类")
+
+
+      case _ => println("其他类型")
+    }
   }
 }
