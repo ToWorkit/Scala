@@ -10,6 +10,6 @@ object Class_01 {
     val g = new Class_01
     println(g.age)
     g.age = 20
-    println(g.age, g.content)
+    println(g.age, g.content) // (20,Hello World)
   }
 }
