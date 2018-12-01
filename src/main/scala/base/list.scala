@@ -49,14 +49,14 @@ object list {
 
     //拉链
     val zip1 = List("15837312345", "137373123456")
-    val zip2 = List("孙悟空", "猪八戒")
+    val zip2 = List("A", "B")
     val zipResultList = zip1 zip zip2
-    println(zipResultList) // List((15837312345,孙悟空), (137373123456,猪八戒))
+    println(zipResultList) // List((15837312345,A), (137373123456,B))
     val zipMap = mutable.Map[String, String]()
     for (e <- zipResultList) {
       zipMap += e
     }
-    println(zipMap) // Map(15837312345 -> 孙悟空, 137373123456 -> 猪八戒)
+    println(zipMap) // Map(15837312345 -> A, 137373123456 -> B)
 
     val iter = List(1, 2, 3, 4).iterator
     while (iter.hasNext) {
