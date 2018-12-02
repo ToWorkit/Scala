@@ -33,7 +33,7 @@ object array {
     // 最值
     println(arr5.max, arr5.min, arr5.sum)
 
-    // 排序
+    // 排序(降序)
     println(arr5.sortWith(_  > _).mkString(" "))
     arr5.sortWith((x, y) => {
       if (x > y)
@@ -41,6 +41,7 @@ object array {
       else
         false
     })
+    // sortWith(_._2 > _._2) 降序
 
     // 二维数组
     val erArr = Array.ofDim[Int](3, 4)
