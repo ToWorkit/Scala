@@ -1,3 +1,2 @@
 # Scala
-Scala的注意点
-Scala一些算法实现
+Scala的注意点和一些算法的实现
