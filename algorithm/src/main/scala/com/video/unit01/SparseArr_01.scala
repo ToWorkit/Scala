@@ -66,7 +66,7 @@ object SparseArr_01 {
     // 跳过第一个节点
     for (i <- 1 until sparseArr.length) {
       val node = sparseArr(i)
-       (node.row)(node.col) = node.value
+      chessMap_2(node.row)(node.col) = node.value
     }
 
     for(item <- chessMap_2) {
