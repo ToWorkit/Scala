@@ -1,4 +1,4 @@
-package com.video.unit01
+package com.video.unit01_array
 
 import scala.collection.mutable.ArrayBuffer
 
