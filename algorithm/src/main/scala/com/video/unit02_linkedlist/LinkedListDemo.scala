@@ -1,5 +1,9 @@
 package com.video.unit02_linkedlist
 
+/**
+  * 单向链表
+  */
+
 import util.control.Breaks._
 
 object LinkedListDemo {
