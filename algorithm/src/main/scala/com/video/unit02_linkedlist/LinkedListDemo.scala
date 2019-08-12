@@ -2,6 +2,7 @@ package com.video.unit02_linkedlist
 
 /**
   * 单向链表
+  * 链表是有序的列表，但是在内存中的存储并不一定是有序的
   */
 
 import util.control.Breaks._

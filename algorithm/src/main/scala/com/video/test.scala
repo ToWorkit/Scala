@@ -23,5 +23,17 @@ object test {
     for (i <- 0 to 3 reverse) {
       println(i)
     }
+    println("-" * 20)
+
+    /**
+      * String
+      * char
+      */
+    println("321".substring(0, 1).getClass.getSimpleName)
+    println("321".substring(0, 1)(0).getClass.getSimpleName)
+    // 1 String
+    println("1".toInt)
+    // 49 char -> ASCII值
+    println("1"(0).toInt)
   }
 }
