@@ -3,6 +3,8 @@ package com.video.unit02_linkedlist
 /**
   * 单向链表
   * 链表是有序的列表，但是在内存中的存储并不一定是有序的
+  *   最大化利用内存的碎片化
+  *     放同样大小的数组不一定在内存中放的下，但列表可能会放下
   */
 
 import util.control.Breaks._
