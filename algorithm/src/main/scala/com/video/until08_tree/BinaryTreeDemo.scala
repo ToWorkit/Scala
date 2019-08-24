@@ -40,6 +40,34 @@ class HeroNode(hNo: Int, hName: String) {
   var left: HeroNode = null
   var right: HeroNode = null
 
+  // 删除节点
+  // 1、如果删除的节点是叶子节点，则删除该节点
+  // 2、如果删除的节点时非叶子节点，则删除该子树
+  def delNode(no: Int): Unit = {
+    // 先比较当前节点的左子节点是否是要删除的节点
+    if (this.left != null && this.left.no == no) {
+      // 删除
+      this.left = null
+      return
+    }
+    // 比较当前节点的右子节点是否是要删除的节点
+    if (this.right != null && this.right.no == no) {
+      // 删除
+      this.right = null
+      return
+    }
+
+    // 当前节点的左右节点都不是时，则向左和向右递归删除
+    // 向左
+    if (this.left != null) {
+      this.left.delNode(no)
+    }
+    // 向右
+    if (this.right != null) {
+      this.right.delNode(no)
+    }
+  }
+
   // 后序查找
   def postOrderSearch(no: Int): HeroNode  = {
     // 先向左递归查找
@@ -164,6 +192,12 @@ class HeroNode(hNo: Int, hName: String) {
 // 二叉树
 class BinaryTree {
   var root: HeroNode = null
+
+  def delNode(no: Int): Unit = {
+    if (root != null) {
+      root.delNode(no)
+    }
+  }
 
   // 后序查找
   def postOrderSearch(no: Int): HeroNode = {
